@@ -1,0 +1,16 @@
+{
+    "name": "Loggin | ERP Login Automation Bot",
+    "description": "Saving you from the hassle of logging in to ERP!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": ["activeTab", "scripting", "storage", "tabs"],
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"],
+        "all_frames": true,
+        "run_at": "document_end"
+    }]
+}
