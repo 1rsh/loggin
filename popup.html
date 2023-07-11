@@ -2,26 +2,41 @@
 <html lang="en">
   <head>
     <link rel = "stylesheet" href = "style.css">
-    
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
         
   <body>
     <div class="center">
-        <h1>Loggin</h1>
+        <image src = "assets/header.png" id="logo">
         <br>
         <form id="myForm">
-            <input id="rollNo" placeholder="Roll Number" minlength="9" maxlength="9" required>
+            Enter your Roll Number:
+            <input id="rollNo" placeholder="Roll Number" minlength="9" maxlength="9" required><br>
+            Enter your Password:
             <input id="pwd" placeholder="Password" type="password" required><br>
-            <input id="Q1" placeholder="ERP Question 1" required>
+            Enter ERP Question 1:
+            <input id="Q1" placeholder="ERP Question 1" required><br>
+            Enter ERP Answer 1:
             <input id="Q1A" placeholder="ERP Answer 1" type = "password" required><br>
-            <input id="Q2" placeholder="ERP Question 2" required>
+            Enter ERP Question 2:
+            <input id="Q2" placeholder="ERP Question 2" required><br>
+            Enter ERP Answer 2:
             <input id="Q2A" placeholder="ERP Answer 2" type = "password" required><br>
-            <input id="Q3" placeholder="ERP Question 3" required>
+            Enter ERP Question 3:
+            <input id="Q3" placeholder="ERP Question 3" required><br>
+            Enter ERP Answer 3:
             <input id="Q3A" placeholder="ERP Answer 3" type = "password" required><br>
             <button id="saveCreds" type="submit">Save</button>     
-            <button id="logIn" type="button">Log In</button>           
-            <script src="popup.js"></script>
+            <button id="logIn" type="button">Log In</button>    
+            <br>       
         </form>
+        <div id="credits">
+          <a href="https://www.linkedin.com/in/irsh" target = "_blank">
+            Made by Irsh Vijayvargia <i class="fa fa-external-link"></i>
+          </a>
+        </div>
     </div>
+    <script src="popup.js"></script>
   </body>
 </html>

@@ -1,16 +1,24 @@
 {
-    "name": "Loggin | ERP Login Automation Bot",
-    "description": "Saving you from the hassle of logging in to ERP!",
+    "name": "loginn | ERP Login Bot IIT KGP",
+    "description": "Easing put the tiring login procedure for ERP!",
     "version": "1.0",
-    "manifest_version": 3,
+    "author": "Irsh Vijayvargia",
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "popup.html",
+        "default_icon": "assets/loggin.png"
     },
-    "permissions": ["activeTab", "scripting", "storage", "tabs"],
+    "permissions": ["activeTab", "scripting", "storage", "tabs", "nativeMessaging"],
+    "icons": {
+        "16": "assets/loggin.png",
+        "48": "assets/loggin.png",
+        "128": "assets/loggin.png"
+    },
     "content_scripts": [{
-        "matches": ["<all_urls>"],
+        "matches": ["https://erp.iitkgp.ac.in/SSOAdministration/login.htm*"],
         "js": ["contentScript.js"],
         "all_frames": true,
         "run_at": "document_end"
-    }]
+    }],
+    "host_permissions": ["https://erp.iitkgp.ac.in/"],
+    "manifest_version": 3
 }
