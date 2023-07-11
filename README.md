@@ -1,7 +1,7 @@
 
 # Loggin: Automatic Login Bot for IIT Kharagpur ERP
 Loggin is an automatic login bot designed specifically for the ERP (Enterprise Resource Planning) system of IIT Kharagpur. It is a Chrome extension that allows users to automate the login process, making it more convenient and efficient.
-![loggin-logo.png](assets/loginn.png)
+![loggin-logo.png](assets/loggin.png)
 
 ## Installation
 To install Loggin, follow these steps:
