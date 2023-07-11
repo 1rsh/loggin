@@ -31,8 +31,8 @@ To use Loggin, follow these steps:
 * After successful login, you will be directed to the ERP dashboard, indicating that Loggin has successfully logged you in.
 > **Note:**  Loggin securely stores your credentials locally on your computer, ensuring their privacy and security.
 
-## Compatibility
-Loggin is compatible with Google Chrome and can be installed on Windows and macOS operating systems.
+## Compatibility    ![Google Chrome](https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white) ![Brave](https://img.shields.io/badge/Brave-FF1B2D?style=for-the-badge&logo=Brave&logoColor=white)
+Loggin is compatible with Google Chrome & Brave and can be installed on Windows and macOS operating systems.
 
 ## Disclaimer
 Loggin is an independent project and is not affiliated with or endorsed by IIT Kharagpur. Use this tool responsibly and in accordance with the IIT Kharagpur's policies and guidelines.
@@ -41,3 +41,7 @@ Loggin is an independent project and is not affiliated with or endorsed by IIT K
 Contributions to Loggin are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.
 
 Happy automated login with Loggin!
+
+
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)  ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)  ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
