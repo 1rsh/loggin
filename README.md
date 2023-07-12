@@ -25,7 +25,7 @@ To use Loggin, follow these steps:
 * Open the [IIT Kharagpur ERP login page](https://erp.iitkgp.ac.in/) in your Chrome browser.
 * Click on the Loggin extension icon, which should be visible in the Chrome toolbar.
 * In the Loggin interface, enter all your ERP credentials (e.g., username, password) and click on the "Save" button to store your credentials securely (Only need to do this one time).
-* Once your credentials are saved, click on the "Log In" button in the Loggin interface.
+* Once your credentials are saved, click on the extension in Chrome's extensions bar.
 * Loggin will prompt you for an OTP (One-Time Password) required for authentication. Enter the OTP in the given prompt and click on "Submit."
 * Loggin will automatically fill in your saved credentials, submit the login form, and complete the authentication process.
 * After successful login, you will be directed to the ERP dashboard, indicating that Loggin has successfully logged you in.
