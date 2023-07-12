@@ -16,6 +16,7 @@
     "content_scripts": [{
         "matches": ["https://erp.iitkgp.ac.in/SSOAdministration/login.htm*"],
         "js": ["contentScript.js"],
+        "css": ["overlay.css"],
         "all_frames": true,
         "run_at": "document_end"
     }],

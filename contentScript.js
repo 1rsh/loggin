@@ -7,6 +7,29 @@ modifiedScript = modifiedScript.replace("json", "");
 
 inlineScript.textContent = modifiedScript;
 
+
+
+var overlay = document.createElement('div');
+overlay.id = 'overlay';
+var image = document.createElement('img');
+image.src = "https://drive.google.com/uc?id=1Bm7_P2oj0qYup_BGdVtn_hfYYWB_1t5P";
+image.style.width = "100%";
+image.style.height = "100%";
+image.style.objectFit = "contain";
+overlay.appendChild(image);
+document.documentElement.appendChild(overlay);
+
+setTimeout(function() {
+  // Remove the image after 2 seconds
+  overlay.removeChild(image);
+  overlay.style.display = 'none';
+}, 3500);
+
+
+
+
+
+
 var consoleLogHistory = [];
 
 function interceptConsoleLog() {
