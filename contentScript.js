@@ -97,7 +97,7 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
     console.log('Waiting...');
     setTimeout(function () {
       var retrievedQuestion = document.querySelector("#question").textContent;
-      console.log(retrievedQuestion);
+      console.log("Question:", retrievedQuestion);
       let answer;
       switch (retrievedQuestion){
         case receivedCreds.Q1:
@@ -112,7 +112,7 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
           answer = receivedCreds.Q3A;
           break;
       }
-      console.log(answer);
+      console.log("Answer:",answer);
       document.querySelector("#answer").value= answer;
     }, 1000);
 
@@ -128,6 +128,7 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
       otp = prompt("Please enter OTP: ");
       if(otp!=null){
         document.querySelector("#email_otp1").value = otp;
+        console.log("OTP:", otp);
         document.querySelector("#loginFormSubmitButton").click();
         }
     }, 1000);

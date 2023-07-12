@@ -1,7 +1,9 @@
+
 body{
     min-width: 350px;
     font-family: 'Poppins';
     font-size: 10pt;
+    background: rgb(0, 0, 0, 0);
 }
 
 .center{
@@ -26,7 +28,7 @@ button {
     background-color: #00913D;
     border: none;
     color: white;
-    min-width: 100px;
+    min-width: 200px;
     padding: 12px 20px 12px 20px;
     text-align: center;
     text-decoration: none;

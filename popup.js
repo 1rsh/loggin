@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  let logIn = document.getElementById('logIn');
+  // let logIn = document.getElementById('logIn');
   let saveCreds = document.getElementById('saveCreds');
   rollNo = document.getElementById('rollNo');
   pwd = document.getElementById('pwd');
@@ -104,24 +104,19 @@ document.addEventListener("DOMContentLoaded", function() {
       if (input.value.trim() != '') {
         isFilled = true;
       }});
-
+      if(saveCreds.textContent === 'Get Questions'){
       if(isFilled){
           chrome.storage.local.set({
               'rollNo': rollNo.value.trim() != '' ? rollNo.value : null,
-              'pwd': pwd.value.trim() != '' ? pwd.value : null,
-              'Q1': Q1.value.trim() != '' ? Q1.value : null,
-              'Q1A': Q1A.value.trim() != '' ? Q1A.value : null,
-              'Q2': Q2.value.trim() != '' ? Q2.value : null,
-              'Q2A': Q2A.value.trim() != '' ? Q2A.value : null,
-              'Q3': Q3.value.trim() != '' ? Q3.value : null,
-              'Q3A': Q3A.value.trim() != '' ? Q3A.value : null
+              'pwd': pwd.value.trim() != '' ? pwd.value : null
             },()=>{
                 console.log('data had been stored');
                 displaySaved();
                 getAllSecurityQuestions()
                 .then((questions) => {
-                  chrome.storage.local.set({"Q1":questions[0], "Q2":questions[1], "Q3":questions[2]});
-                  console.log("Got Questions");
+                  chrome.storage.local.set({"Q1":questions[0], "Q2":questions[1], "Q3":questions[2]}, ()=>{
+                    console.log("Got Questions", questions);
+                  });
                   chrome.storage.local.set({"setQuestions": true});
                   document.getElementById('Q1T').textContent = questions[0];
                   document.getElementById('Q1').hidden=true;
@@ -136,7 +131,33 @@ document.addEventListener("DOMContentLoaded", function() {
                   console.error(error);
                 });
             });
-            alert("Saved Successfully!");
+            alert("Getting Questions..");
+      }}
+      else{
+        chrome.storage.local.set({
+          'rollNo': rollNo.value.trim() != '' ? rollNo.value : null,
+          'pwd': pwd.value.trim() != '' ? pwd.value : null,
+          'Q1A': Q1A.value.trim() != '' ? Q1A.value : null,
+          'Q2A': Q2A.value.trim() != '' ? Q2A.value : null,
+          'Q3A': Q3A.value.trim() != '' ? Q3A.value : null
+        },()=>{
+            console.log('data had been stored');
+            displaySaved();
+            chrome.storage.local.get(['setQuestions', 'Q1', 'Q2', 'Q3'], (result => {
+              console.log(result);
+              if(result.setQuestions){
+                document.getElementById('Q1T').textContent = result.Q1;
+                document.getElementById('Q1').hidden=true;
+                document.getElementById('Q2T').textContent = result.Q2;
+                document.getElementById('Q2').hidden=true;
+                document.getElementById('Q3T').textContent = result.Q3;
+                document.getElementById('Q3').hidden=true;
+                document.getElementById('questions').style.display = 'block';
+                saveCreds.textContent = 'Update';
+              }
+            }))
+        });
+        alert("Saved Successfully!");
       }
   });
 
@@ -162,25 +183,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById('Q3').hidden=true;
                 document.getElementById('questions').style.display = 'block';
                 saveCreds.textContent = 'Update';
-              }
-              else{
-                getAllSecurityQuestions()
-                .then((questions) => {
-                  chrome.storage.local.set({"Q1":questions[0], "Q2":questions[1], "Q3":questions[2]});
-                  console.log("Got Questions");
-                  chrome.storage.local.set({"setQuestions": true});
-                  document.getElementById('Q1T').textContent = questions[0];
-                  document.getElementById('Q1').hidden=true;
-                  document.getElementById('Q2T').textContent = questions[1];
-                  document.getElementById('Q2').hidden=true;
-                  document.getElementById('Q3T').textContent = questions[2];
-                  document.getElementById('Q3').hidden=true;
-                  document.getElementById('questions').style.display = 'block';
-                  saveCreds.textContent = 'Update';
-                })
-                .catch((error) => {
-                  console.error(error);
-                });
               }
             }));
           }
