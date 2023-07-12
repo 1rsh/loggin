@@ -13,6 +13,7 @@ To install Loggin, follow these steps:
 
 Download the [loggin.zip](loggin.zip) file.
 Extract the contents of the ZIP file to a location of your choosing on your computer.
+> **Note:** Please uninstall any other ERP extensions so this may run without any errors.
 ## Setup
 * Open Google Chrome and navigate to [chrome://extensions](chrome://extensions).
 * Enable the **Developer Mode** by toggling the switch located in the top-right corner of the page.
@@ -22,11 +23,12 @@ Extract the contents of the ZIP file to a location of your choosing on your comp
 
 ## Usage
 To use Loggin, follow these steps:
-* Open the [IIT Kharagpur ERP login page](https://erp.iitkgp.ac.in/) in your Chrome browser.
 * Click on the Loggin extension icon, which should be visible in the Chrome toolbar.
-* In the Loggin interface, enter all your ERP credentials (e.g., username, password) and click on the "Save" button to store your credentials securely (Only need to do this one time).
-* Once your credentials are saved, click on the extension in Chrome's extensions bar.
-* Loggin will prompt you for an OTP (One-Time Password) required for authentication. Enter the OTP in the given prompt and click on "Submit."
+* In the Loggin interface, enter all your Roll Number and Password and click on the "Get Questions" button to store your credentials securely (Only need to do this one time).
+* Wait for a second and fill in the answers to the corresponding questions.
+* Once your credentials are saved, Open the [IIT Kharagpur ERP login page](https://erp.iitkgp.ac.in/) in your Chrome browser.
+* Click on the extension in Chrome's extensions bar.
+* Loggin will prompt you for an OTP (One-Time Password) required for authentication (We are not bypassing this feature for your security). Enter the OTP in the given prompt and click on "Submit."
 * Loggin will automatically fill in your saved credentials, submit the login form, and complete the authentication process.
 * After successful login, you will be directed to the ERP dashboard, indicating that Loggin has successfully logged you in.
 > **Note:**  Loggin securely stores your credentials locally on your computer, ensuring their privacy and security.
