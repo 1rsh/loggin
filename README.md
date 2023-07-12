@@ -3,7 +3,7 @@
 <table>
   <tr>
     <td>Loggin is an automatic login bot designed specifically for the ERP (Enterprise Resource Planning) system of IIT Kharagpur. It is a Chrome extension that allows users to automate the login process, making it more convenient and efficient.</td>
-    <td><img src="assets/loggin.png" alt="loggin-logo" width="200"/></td>
+    <td><img src="assets/overlay.gif" alt="loggin-logo" width="200"/></td>
   </tr>
 </table>
 
