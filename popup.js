@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-  logIn.addEventListener('click', () => {
+  window.addEventListener('load', () => {
       chrome.storage.local.get([
         'rollNo',
         'pwd',
