@@ -31,6 +31,7 @@ To use Loggin, follow these steps:
 * Loggin will prompt you for an OTP (One-Time Password) required for authentication (We are not bypassing this feature for your security). Enter the OTP in the given prompt and click on "Submit."
 * Loggin will automatically fill in your saved credentials, submit the login form, and complete the authentication process.
 * After successful login, you will be directed to the ERP dashboard, indicating that Loggin has successfully logged you in.
+* For further uses, just navigate to the ERP page and click on the extension's icon to login.
 > **Note:**  Loggin securely stores your credentials locally on your computer, ensuring their privacy and security.
 
 ## Compatibility    ![Google Chrome](https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white) ![Brave](https://img.shields.io/badge/Brave-FF1B2D?style=for-the-badge&logo=Brave&logoColor=white)
