@@ -11,7 +11,7 @@
 ## Installation
 To install Loggin, follow these steps:
 
-Download the [loginn.zip](loggin.zip) file.
+Download the [loggin.zip](loggin.zip) file.
 Extract the contents of the ZIP file to a location of your choosing on your computer.
 ## Setup
 * Open Google Chrome and navigate to [chrome://extensions](chrome://extensions).
