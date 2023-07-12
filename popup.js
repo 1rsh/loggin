@@ -116,6 +116,23 @@ document.addEventListener("DOMContentLoaded", function() {
             },()=>{
                 console.log('data had been stored');
                 displaySaved();
+                getAllSecurityQuestions()
+                .then((questions) => {
+                  chrome.storage.local.set({"Q1":questions[0], "Q2":questions[1], "Q3":questions[2]});
+                  console.log("Got Questions");
+                  chrome.storage.local.set({"setQuestions": true});
+                  document.getElementById('Q1T').textContent = questions[0];
+                  document.getElementById('Q1').hidden=true;
+                  document.getElementById('Q2T').textContent = questions[1];
+                  document.getElementById('Q2').hidden=true;
+                  document.getElementById('Q3T').textContent = questions[2];
+                  document.getElementById('Q3').hidden=true;
+                  document.getElementById('questions').style.display = 'block';
+                  saveCreds.textContent = 'Update';
+                })
+                .catch((error) => {
+                  console.error(error);
+                });
             });
             alert("Saved Successfully!");
       }
@@ -141,6 +158,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById('Q2').hidden=true;
                 document.getElementById('Q3T').textContent = result.Q3;
                 document.getElementById('Q3').hidden=true;
+                document.getElementById('questions').style.display = 'block';
+                saveCreds.textContent = 'Update';
               }
               else{
                 getAllSecurityQuestions()
@@ -154,6 +173,8 @@ document.addEventListener("DOMContentLoaded", function() {
                   document.getElementById('Q2').hidden=true;
                   document.getElementById('Q3T').textContent = questions[2];
                   document.getElementById('Q3').hidden=true;
+                  document.getElementById('questions').style.display = 'block';
+                  saveCreds.textContent = 'Update';
                 })
                 .catch((error) => {
                   console.error(error);
@@ -220,8 +241,6 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
 
-
-
   window.addEventListener('load', () => {
       chrome.storage.local.get([
         'rollNo',
@@ -236,9 +255,16 @@ document.addEventListener("DOMContentLoaded", function() {
         var credtoSend = result;
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
           chrome.tabs.sendMessage(tabs[0].id, {data: credtoSend}, function(response) {});  
-          setTimeout(result, 500);
+          setTimeout(function () {console.log('Sent to Content Script!')}, 500);
         });
       
       });
     });
+
+
+
+
+
+
+// DOM End
 });

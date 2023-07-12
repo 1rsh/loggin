@@ -2,7 +2,8 @@ console.log("Content Script Succesfully Injected!")
 
 var inlineScript = document.querySelectorAll("script")[6];
 let scriptText = inlineScript.textContent;
-let modifiedScript = scriptText.replace("alert(json.msg);", "\n");
+let modifiedScript = scriptText.replace("alert(json.msg);", "");
+modifiedScript = modifiedScript.replace("json", "");
 
 inlineScript.textContent = modifiedScript;
 
