@@ -22,7 +22,7 @@ Extract the contents of the ZIP file to a location of your choosing on your comp
 
 ## Usage
 To use Loggin, follow these steps:
-* Open the IIT Kharagpur ERP login page in your Chrome browser.
+* Open the [IIT Kharagpur ERP login page](https://erp.iitkgp.ac.in/) in your Chrome browser.
 * Click on the Loggin extension icon, which should be visible in the Chrome toolbar.
 * In the Loggin interface, enter all your ERP credentials (e.g., username, password) and click on the "Save" button to store your credentials securely (Only need to do this one time).
 * Once your credentials are saved, click on the "Log In" button in the Loggin interface.
