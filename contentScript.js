@@ -120,7 +120,7 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
     
 
     
-    document.querySelector("#getotp1").click();
+    document.querySelector("#getotp").click();
     
     let otp;
     setTimeout(function () {
