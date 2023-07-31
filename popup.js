@@ -9,9 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
   Q2A = document.getElementById('Q2A');
   Q3 = document.getElementById('Q3');
   Q3A = document.getElementById('Q3A');
+  AtKGP = document.getElementById('atkgp');
+  console.log(AtKGP.checked);;
 
-
-
+  
 
   const form = document.getElementById('myForm');
 
@@ -125,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   document.getElementById('Q3T').textContent = questions[2];
                   document.getElementById('Q3').hidden=true;
                   document.getElementById('questions').style.display = 'block';
+                  document.getElementById('atkgp').checked = result.atkgp;
                   saveCreds.textContent = 'Update';
                 })
                 .catch((error) => {
@@ -139,11 +141,12 @@ document.addEventListener("DOMContentLoaded", function() {
           'pwd': pwd.value.trim() != '' ? pwd.value : null,
           'Q1A': Q1A.value.trim() != '' ? Q1A.value : null,
           'Q2A': Q2A.value.trim() != '' ? Q2A.value : null,
-          'Q3A': Q3A.value.trim() != '' ? Q3A.value : null
+          'Q3A': Q3A.value.trim() != '' ? Q3A.value : null,
+          'atkgp': AtKGP.checked
         },()=>{
             console.log('data had been stored');
             displaySaved();
-            chrome.storage.local.get(['setQuestions', 'Q1', 'Q2', 'Q3'], (result => {
+            chrome.storage.local.get(['setQuestions', 'Q1', 'Q2', 'Q3', 'atkgp'], (result => {
               console.log(result);
               if(result.setQuestions){
                 document.getElementById('Q1T').textContent = result.Q1;
@@ -153,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById('Q3T').textContent = result.Q3;
                 document.getElementById('Q3').hidden=true;
                 document.getElementById('questions').style.display = 'block';
+                document.getElementById('atkgp').checked = result.atkgp;
                 saveCreds.textContent = 'Update';
               }
             }))
@@ -170,10 +174,11 @@ document.addEventListener("DOMContentLoaded", function() {
       'Q2',
       'Q2A',
       'Q3',
-      'Q3A'], (result=>{
+      'Q3A',
+      'atkgp'], (result=>{
           rollNo.placeholder = result.rollNo ? result.rollNo : "Enter Roll Number";   
           if(result.rollNo){
-            chrome.storage.local.get(['setQuestions', 'Q1', 'Q2', 'Q3'], (result => {
+            chrome.storage.local.get(['setQuestions', 'Q1', 'Q2', 'Q3', 'atkgp'], (result => {
               if(result.setQuestions){
                 document.getElementById('Q1T').textContent = result.Q1;
                 document.getElementById('Q1').hidden=true;
@@ -182,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById('Q3T').textContent = result.Q3;
                 document.getElementById('Q3').hidden=true;
                 document.getElementById('questions').style.display = 'block';
+                document.getElementById('atkgp').checked = result.atkgp;
                 saveCreds.textContent = 'Update';
               }
             }));
@@ -201,6 +207,7 @@ document.addEventListener("DOMContentLoaded", function() {
           Q2A.value = result.Q2A ? result.Q2A : null;
           Q3.value = result.Q3 ? result.Q3 : null;
           Q3A.value = result.Q3A ? result.Q3A : null;
+          AtKGP.checked = result.atkgp ? result.atkgp : null;
       }));
 
 
@@ -223,7 +230,8 @@ document.addEventListener("DOMContentLoaded", function() {
           'Q2',
           'Q2A',
           'Q3',
-          'Q3A'], (result=>{
+          'Q3A',
+          'atkgp'], (result=>{
               rollNo.placeholder = result.rollNo ? result.rollNo : "Enter your Roll Number";
               pwd.placeholder = result.pwd ? "\u2022".repeat(result.pwd.length) : "Enter Password";
               Q1.placeholder = result.Q1 ? result.Q1 : "Enter ERP Q1";
@@ -240,6 +248,7 @@ document.addEventListener("DOMContentLoaded", function() {
               Q2A.value = result.Q2A ? result.Q2A : null;
               Q3.value = result.Q3 ? result.Q3 : null;
               Q3A.value = result.Q3A ? result.Q3A : null;
+              AtKGP.value = result.atkgp ? result.atkgp : null;
           }))
       
   };
@@ -254,7 +263,8 @@ document.addEventListener("DOMContentLoaded", function() {
         'Q2',
         'Q2A',
         'Q3',
-        'Q3A'
+        'Q3A',
+        'atkgp'
       ], function (result) {
         var credtoSend = result;
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs){

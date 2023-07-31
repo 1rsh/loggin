@@ -118,19 +118,29 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
 
 
     
-
+    if(receivedCreds.atkgp===false){
+      document.querySelector("#getotp").click();
     
-    document.querySelector("#getotp").click();
-    
-    let otp;
-    setTimeout(function () {
-      console.log('Waiting...');
-      otp = prompt("Please enter OTP: ");
-      if(otp!=null){
-        document.querySelector("#email_otp1").value = otp;
-        console.log("OTP:", otp);
+      let otp;
+      setTimeout(function () {
+        console.log('Waiting...');
+        otp = prompt("Please enter OTP: ");
+        if(otp!=null){
+          document.querySelector("#email_otp1").value = otp;
+          console.log("OTP:", otp);
+          document.querySelector("#loginFormSubmitButton").click();
+          }
+      }, 1000);
+    }
+    else{
+      
+      setTimeout(function () {
+        
         document.querySelector("#loginFormSubmitButton").click();
-        }
-    }, 1000);
+          
+      }, 1000);
+    }
+    
+    
     
 });
